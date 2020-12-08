@@ -205,7 +205,7 @@ void mf::WlPointer::axis(std::chrono::milliseconds const& ms, std::pair<float, f
         send_axis_event(
             ms.count(),
             Axis::vertical_scroll,
-            scroll.second);
+            -scroll.second);
         can_send_frame = true;
     }
 }
