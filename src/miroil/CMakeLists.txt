@@ -13,6 +13,7 @@ add_library(miroil SHARED
     event_builder.cpp ${miroil_include}/miroil/event_builder.h
     input_device.cpp ${miroil_include}/miroil/input_device.h
     input_device_observer.cpp ${miroil_include}/miroil/input_device_observer.h
+    named_cursor.cpp ${miroil_include}/miroil/named_cursor.h
     prompt_session_listener.cpp ${miroil_include}/miroil/prompt_session_listener.h
     prompt_session_manager.cpp ${miroil_include}/miroil/prompt_session_manager.h    
     ${miroil_include}/miroil/display_configuration_storage.h

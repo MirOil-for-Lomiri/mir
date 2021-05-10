@@ -34,6 +34,12 @@ global:
     miroil::InputDeviceObserver::?InputDeviceObserver*;
     miroil::InputDeviceObserver::InputDeviceObserver*;
     miroil::InputDeviceObserver::operator*;
+    miroil::NamedCursor::?NamedCursor*;
+    miroil::NamedCursor::NamedCursor*;
+    miroil::NamedCursor::as_argb_8888*;
+    miroil::NamedCursor::hotspot*;
+    miroil::NamedCursor::name*;
+    miroil::NamedCursor::size*;
     miroil::PersistDisplayConfig::?PersistDisplayConfig*;
     miroil::PersistDisplayConfig::PersistDisplayConfig*;
     miroil::PersistDisplayConfig::operator*;
@@ -65,6 +71,7 @@ global:
     typeinfo?for?miroil::GLBuffer;
     typeinfo?for?miroil::InputDevice;
     typeinfo?for?miroil::InputDeviceObserver;
+    typeinfo?for?miroil::NamedCursor;
     typeinfo?for?miroil::PersistDisplayConfig;
     typeinfo?for?miroil::PromptSessionListener;
     typeinfo?for?miroil::PromptSessionManager;
@@ -81,6 +88,7 @@ global:
     vtable?for?miroil::GLBuffer;
     vtable?for?miroil::InputDevice;
     vtable?for?miroil::InputDeviceObserver;
+    vtable?for?miroil::NamedCursor;
     vtable?for?miroil::PersistDisplayConfig;
     vtable?for?miroil::PromptSessionListener;
     vtable?for?miroil::PromptSessionManager;
