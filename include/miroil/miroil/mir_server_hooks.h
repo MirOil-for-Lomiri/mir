@@ -27,7 +27,6 @@
 namespace mir { class Server; }
 namespace mir { namespace scene { class PromptSessionManager; }}
 namespace mir { namespace graphics { class Display; }}
-namespace mir { namespace input { class InputDeviceHub; } }
 namespace mir { namespace shell { class DisplayConfigurationController; } }
 
 namespace miroil
@@ -44,8 +43,6 @@ public:
     auto the_prompt_session_listener() const -> miroil::PromptSessionListener*;
     auto the_prompt_session_manager() const -> std::shared_ptr<mir::scene::PromptSessionManager>;
     auto the_mir_display() const -> std::shared_ptr<mir::graphics::Display>;
-    auto the_input_device_hub() const -> std::shared_ptr<mir::input::InputDeviceHub>;
-
     auto the_display_configuration_controller() const -> std::shared_ptr<mir::shell::DisplayConfigurationController>;
     void create_named_cursor(CreateNamedCursor func);
     void create_input_device_observer(std::shared_ptr<miroil::InputDeviceObserver> & observer);

@@ -170,15 +170,6 @@ auto miroil::MirServerHooks::the_mir_display() const
     throw std::logic_error("No display available. Server not running?");
 }
 
-auto miroil::MirServerHooks::the_input_device_hub() const
--> std::shared_ptr<mir::input::InputDeviceHub>
-{
-    if (auto result = self->input_device_hub.lock())
-        return result;
-
-    throw std::logic_error("No input device hub available. Server not running?");
-}
-
 auto miroil::MirServerHooks::the_display_configuration_controller() const
 -> std::shared_ptr<mir::shell::DisplayConfigurationController>
 {
@@ -195,7 +186,12 @@ void miroil::MirServerHooks::create_named_cursor(CreateNamedCursor func)
 
 void miroil::MirServerHooks::create_input_device_observer(std::shared_ptr<miroil::InputDeviceObserver> & observer)
 {
-    the_input_device_hub()->add_observer(std::make_shared<MirInputDeviceObserverImpl>(observer));
+    if (auto result = self->input_device_hub.lock()) {
+        result->add_observer(std::make_shared<MirInputDeviceObserverImpl>(observer));
+	return;
+    }
+
+    throw std::logic_error("No input device hub available. Server not running?");
 }
 
 void miroil::MirServerHooks::create_prompt_session_listener(std::shared_ptr<miroil::PromptSessionListener> listener)
