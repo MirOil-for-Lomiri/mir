@@ -16,8 +16,8 @@
  * Authored by: Alan Griffiths <alan@octopull.co.uk>
  */
 
-#ifndef MIRAL_MIRSERVERHOOKS_H
-#define MIRAL_MIRSERVERHOOKS_H
+#ifndef MIROIL_MIRSERVERHOOKS_H
+#define MIROIL_MIRSERVERHOOKS_H
 #include "miroil/input_device_observer.h"
 #include "miroil/prompt_session_listener.h"
 #include <mir/graphics/cursor_image.h>
@@ -41,15 +41,15 @@ public:
 
     void operator()(mir::Server& server);
 
-    miroil::PromptSessionListener *promptSessionListener() const;
-    std::shared_ptr<mir::scene::PromptSessionManager> thePromptSessionManager() const;
-    std::shared_ptr<mir::graphics::Display> theMirDisplay() const;
-    std::shared_ptr<mir::input::InputDeviceHub> theInputDeviceHub() const;
+    miroil::PromptSessionListener *the_prompt_session_listener() const;
+    std::shared_ptr<mir::scene::PromptSessionManager> the_prompt_session_manager() const;
+    std::shared_ptr<mir::graphics::Display> the_mir_display() const;
+    std::shared_ptr<mir::input::InputDeviceHub> the_input_device_hub() const;
 
-    std::shared_ptr<mir::shell::DisplayConfigurationController> theDisplayConfigurationController() const; 
-    void createNamedCursor(CreateNamedCursor func);
-    void createInputDeviceObserver(std::shared_ptr<miroil::InputDeviceObserver> & observer);
-    void createPromptSessionListener(std::shared_ptr<miroil::PromptSessionListener> listener);
+    std::shared_ptr<mir::shell::DisplayConfigurationController> the_display_configuration_controller() const; 
+    void create_named_cursor(CreateNamedCursor func);
+    void create_input_device_observer(std::shared_ptr<miroil::InputDeviceObserver> & observer);
+    void create_prompt_session_listener(std::shared_ptr<miroil::PromptSessionListener> listener);
 
 private:
     struct Self;
@@ -57,4 +57,4 @@ private:
 };
 }
 
-#endif //MIRAL_MIRSERVERHOOKS_H
+#endif //MIROIL_MIRSERVERHOOKS_H
