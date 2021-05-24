@@ -20,15 +20,15 @@
 namespace miroil
 {
 
-class Compositor 
+class Compositor
 {
     public:
     virtual ~Compositor();
 
     Compositor& operator=(Compositor const&) = delete;
-    
+
     virtual void start() = 0;
-    virtual void stop()  = 0;        
+    virtual void stop()  = 0;
 
 protected:
     Compositor() = default;
@@ -38,9 +38,3 @@ protected:
 }
 
 #endif // MIROIL_COMPOSITOR_H
-
-
-
-
-
-
