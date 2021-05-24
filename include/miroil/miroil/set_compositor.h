@@ -30,14 +30,14 @@ namespace miroil
 // Configure the server for using the Qt compositor
 class SetCompositor
 {
-    using initFunction = std::function<void(const std::shared_ptr<mir::graphics::Display>& display,
+    using InitFunction = std::function<void(const std::shared_ptr<mir::graphics::Display>& display,
                        const std::shared_ptr<Compositor> & compositor,
                        const std::shared_ptr<mir::compositor::DisplayListener>& displayListener)>;
                        
-    using constructorFunction = std::function<std::shared_ptr<Compositor>()>;    
+    using ConstructorFunction = std::function<std::shared_ptr<Compositor>()>;    
     
 public:
-    SetCompositor(constructorFunction constructor, initFunction init);
+    SetCompositor(ConstructorFunction constructor, InitFunction init);
     
     void operator()(mir::Server& server);
 
@@ -45,8 +45,8 @@ private:
     struct CompositorImpl;
     
     std::weak_ptr<CompositorImpl> compositor_impl;
-    constructorFunction           constructor_function;    
-    initFunction                  init_function;    
+    ConstructorFunction           constructor_function;    
+    InitFunction                  init_function;    
 };
 
 }

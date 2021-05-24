@@ -58,7 +58,7 @@ void SetCompositor::CompositorImpl::stop()
     return custom_compositor->stop();
 }
 
-SetCompositor::SetCompositor(constructorFunction constr, initFunction init)
+SetCompositor::SetCompositor(ConstructorFunction constr, InitFunction init)
     : constructor_function(constr), init_function(init)
 {
 }
