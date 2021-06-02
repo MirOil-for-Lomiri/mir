@@ -21,10 +21,8 @@
 
 // mir
 #include <mir/server.h>
-
-namespace miroil {
-    
-struct OpenGLContext::Self
+   
+struct miroil::OpenGLContext::Self
 {
     Self(mir::graphics::GLConfig * glConfig)
     : m_glConfig(glConfig) 
@@ -34,21 +32,21 @@ struct OpenGLContext::Self
     std::shared_ptr<mir::graphics::GLConfig> m_glConfig;
 };
 
-OpenGLContext::OpenGLContext(mir::graphics::GLConfig * glConfig)
+miroil::OpenGLContext::OpenGLContext(mir::graphics::GLConfig * glConfig)
 :    self{std::make_shared<Self>(glConfig)}
 {    
 }
 
-void OpenGLContext::operator()(mir::Server& server)
+void miroil::OpenGLContext::operator()(mir::Server& server)
 {
     server.override_the_gl_config([this]
         { return self->m_glConfig; }
     );
 }
 
-auto OpenGLContext::the_open_gl_config() const
+auto miroil::OpenGLContext::the_open_gl_config() const
 -> std::shared_ptr<mir::graphics::GLConfig>
 {
     return self->m_glConfig;
 }
-}
+
