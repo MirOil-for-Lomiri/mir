@@ -24,29 +24,29 @@
    
 struct miroil::OpenGLContext::Self
 {
-    Self(mir::graphics::GLConfig * glConfig)
-    : m_glConfig(glConfig) 
+    Self(mir::graphics::GLConfig* gl_config)
+    : gl_config(gl_config)
     {        
     }
     
-    std::shared_ptr<mir::graphics::GLConfig> m_glConfig;
+    std::shared_ptr<mir::graphics::GLConfig> const gl_config;
 };
 
-miroil::OpenGLContext::OpenGLContext(mir::graphics::GLConfig * glConfig)
-:    self{std::make_shared<Self>(glConfig)}
+miroil::OpenGLContext::OpenGLContext(mir::graphics::GLConfig* gl_config)
+:    self{std::make_shared<Self>(gl_config)}
 {    
 }
 
 void miroil::OpenGLContext::operator()(mir::Server& server)
 {
     server.override_the_gl_config([this]
-        { return self->m_glConfig; }
+        { return self->gl_config; }
     );
 }
 
 auto miroil::OpenGLContext::the_open_gl_config() const
 -> std::shared_ptr<mir::graphics::GLConfig>
 {
-    return self->m_glConfig;
+    return self->gl_config;
 }
 

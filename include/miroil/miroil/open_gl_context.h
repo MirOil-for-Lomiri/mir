@@ -29,7 +29,7 @@ namespace miroil
 class OpenGLContext
 {
 public:
-    OpenGLContext(mir::graphics::GLConfig* glConfig);
+    OpenGLContext(mir::graphics::GLConfig* gl_config);
 
     void operator()(mir::Server& server);
     auto the_open_gl_config() const -> std::shared_ptr<mir::graphics::GLConfig>;
