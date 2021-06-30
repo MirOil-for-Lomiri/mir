@@ -22,6 +22,7 @@ global:
     miroil::GLBuffer::?GLBuffer*;
     miroil::GLBuffer::GLBuffer*;
     miroil::GLBuffer::bind*;
+    miroil::GLBuffer::has_alpha_channel*;
     miroil::GLBuffer::operator*;
     miroil::GLBuffer::reset*;
     miroil::GLBuffer::size*;
@@ -63,6 +64,25 @@ global:
     miroil::PromptSessionManager::suspend_prompt_session*;
     miroil::SetCompositor::SetCompositor*;
     miroil::SetCompositor::operator*;
+    miroil::Surface::?Surface*;
+    miroil::Surface::Surface*;
+    miroil::Surface::add_observer*;
+    miroil::Surface::buffers_ready_for_compositor*;
+    miroil::Surface::configure*;
+    miroil::Surface::generate_renderables*;
+    miroil::Surface::getWrapped*;
+    miroil::Surface::is_confined_to_window*;
+    miroil::Surface::parent*;
+    miroil::Surface::query*;
+    miroil::Surface::remove_observer*;
+    miroil::Surface::set_confine_pointer_state*;
+    miroil::Surface::set_keymap*;
+    miroil::Surface::set_orientation*;
+    miroil::Surface::top_left*;
+    miroil::Surface::visible*;
+    miroil::SurfaceObserver::?SurfaceObserver*;
+    miroil::SurfaceObserver::SurfaceObserver*;
+    miroil::SurfaceObserver::operator*;
     miroil::dispatch_input_event*;
     non-virtual?thunk?to?miroil::Compositor::?Compositor*;
     non-virtual?thunk?to?miroil::DisplayConfigurationPolicy::?DisplayConfigurationPolicy*;
@@ -70,6 +90,7 @@ global:
     non-virtual?thunk?to?miroil::EventBuilder::?EventBuilder*;
     non-virtual?thunk?to?miroil::InputDeviceObserver::?InputDeviceObserver*;
     non-virtual?thunk?to?miroil::PromptSessionListener::?PromptSessionListener*;
+    non-virtual?thunk?to?miroil::SurfaceObserver::?SurfaceObserver*;
     typeinfo?for?miroil::Compositor;
     typeinfo?for?miroil::DisplayConfigurationOptions;
     typeinfo?for?miroil::DisplayConfigurationOptions::DisplayMode;
@@ -90,6 +111,8 @@ global:
     typeinfo?for?miroil::PromptSessionListener;
     typeinfo?for?miroil::PromptSessionManager;
     typeinfo?for?miroil::SetCompositor;
+    typeinfo?for?miroil::Surface;
+    typeinfo?for?miroil::SurfaceObserver;
     vtable?for?miroil::Compositor;
     vtable?for?miroil::DisplayConfigurationOptions;
     vtable?for?miroil::DisplayConfigurationOptions::DisplayMode;
@@ -110,6 +133,8 @@ global:
     vtable?for?miroil::PromptSessionListener;
     vtable?for?miroil::PromptSessionManager;
     vtable?for?miroil::SetCompositor;
+    vtable?for?miroil::Surface;
+    vtable?for?miroil::SurfaceObserver;
   };
 
 local: *;
